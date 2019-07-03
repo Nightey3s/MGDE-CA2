@@ -18,3 +18,7 @@ level mode & endless mode
 
 stickman model, with gameobject head
 logo & splash screen
+
+Memes:
+Bongo cat
+Me and the Boys
