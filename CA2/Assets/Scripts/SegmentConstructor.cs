@@ -7,16 +7,20 @@ public class SegmentConstructor : MonoBehaviour
     private GameObject currentSegment;
 
     /// <summary>
-    /// Places the gameobject in the game. Return false if segment has not been
-    /// placed.
+    /// Places the gameobject in the game.
     /// </summary>
     /// <param name="segment"></param>
     /// <returns></returns>
-    public void Construct(GameObject gameObject)
+    public void Construct(ref GameObject gameObject)
     {
-        currentSegment = Instantiate(gameObject, transform.position, transform.rotation);
+        gameObject = Instantiate(gameObject, transform.position, transform.rotation);
+        currentSegment = gameObject;
     }
 
+    /// <summary>
+    /// Returns true if placing an object will not result in clipping
+    /// </summary>
+    /// <returns></returns>
     public bool SpaceAvailable()
     {
         if (!currentSegment)

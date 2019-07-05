@@ -25,7 +25,7 @@ public class ConstructionQueue : MonoBehaviour
 
     private SegmentController GetRandomSegmentFromArray(SegmentController[] segments)
     {
-        int index = Random.Range(0, segments.Length - 1);
+        int index = Random.Range(0, segments.Length);
         return segments[index];
     }
 }

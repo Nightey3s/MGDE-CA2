@@ -38,6 +38,10 @@ public class SegmentController : MonoBehaviour
     /// </summary>
     public float Speed { get; set; }
 
+    public void MarkForDeletion(SegmentDeleter deleter)
+    {
+        StartCoroutine(deleter.MarkForDeletion(this.gameObject));
+    }
 
     private void Update()
     {

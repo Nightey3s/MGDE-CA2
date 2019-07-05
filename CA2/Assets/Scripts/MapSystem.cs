@@ -8,30 +8,23 @@ public class MapSystem : MonoBehaviour
     private SegmentConstructor constructor;
     private SegmentDeleter deleter;
     [SerializeField] private ConstructionQueue queue;
-    private bool isReady;
-    private bool isEmpty;
-    private SegmentController currentSegment;
+    private GameObject currentSegment;
 
     private void Awake()
     {
         constructor = GetComponentInChildren<SegmentConstructor>();
         queue = GetComponentInChildren<ConstructionQueue>();
-        isReady = true;
-        isEmpty = false;
+        deleter = GetComponentInChildren<SegmentDeleter>();
     }
+
     private void Update()
     {
         if (constructor.SpaceAvailable())
         {
-            currentSegment = queue.GetNextSegment();
-            constructor.Construct(currentSegment.gameObject);
-            deleter.MarkForDeletion(currentSegment);
+            currentSegment = queue.GetNextSegment().gameObject;
+            constructor.Construct(ref currentSegment);
+            currentSegment.GetComponent<SegmentController>().MarkForDeletion(deleter);
         }
-    }
-
-    private void CheckStates()
-    {
-        
     }
 }
 

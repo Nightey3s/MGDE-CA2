@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   segmentsUsed:
   - {fileID: 6543867063907445642, guid: 1a768b30a9b246a4797c20233f6cc40b, type: 3}
+  - {fileID: 3220263826531553467, guid: fefeb4eb474be93489a5acd704f87b3b, type: 3}
 --- !u!1001 &717001988557763435
 PrefabInstance:
   m_ObjectHideFlags: 0
