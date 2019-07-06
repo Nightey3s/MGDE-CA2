@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingObstacle : MonoBehaviour
+public class PathMovement : MonoBehaviour
 {
     [Tooltip("Movement range from the position of start to end.")]
     [SerializeField] private Transform start, end;
