@@ -45,11 +45,44 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = Input.GetKeyDown(KeyCode.W);
         isSliding = Input.GetKey(KeyCode.E);
+        TouchInputHandler();
+    }
+
+    // Handles touchscreen inputs
+    // 1 touch to jump
+    // 2 touches to slide
+    private void TouchInputHandler()
+    {
+        Touch[] touches = Input.touches;
+        try
+        {
+            if (touches.Length != 0)
+            {
+
+                if(touches.Length == 1)
+                {
+                    if (touches[0].phase == TouchPhase.Began)
+                    {
+                        isJumping = true;
+                    }
+                }
+
+
+                if (touches.Length == 2)
+                {
+                    if (touches[1].phase == TouchPhase.Stationary)
+                    {
+                        isSliding = true;
+                    }
+                }
+            }
+        }
+        catch { }
     }
 
     private void MoveTowardsMiddle()
     {
-        if(transform.position.x != target.position.x)
+        if (transform.position.x != target.position.x)
         {
             Vector3 targetPosition =
                 new Vector3(target.position.x, transform.position.y, transform.position.z);

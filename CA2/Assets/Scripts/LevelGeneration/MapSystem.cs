@@ -10,6 +10,7 @@ public class MapSystem : MonoBehaviour
     [SerializeField] private ConstructionQueue queue;
     private GameObject currentSegment;
 
+    // Stores references to required components for level generation
     private void Awake()
     {
         constructor = GetComponentInChildren<SegmentConstructor>();
@@ -17,6 +18,7 @@ public class MapSystem : MonoBehaviour
         deleter = GetComponentInChildren<SegmentDeleter>();
     }
 
+    // Runs level generation and cleanup
     private void Update()
     {
         if (constructor.SpaceAvailable())
