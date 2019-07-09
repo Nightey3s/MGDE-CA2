@@ -654,6 +654,11 @@ PrefabInstance:
       propertyPath: speed
       value: 0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 2362825826006032345, guid: b2109272384fcdd47b8ec041b5634df2,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2362825826006032346, guid: b2109272384fcdd47b8ec041b5634df2,
         type: 3}
       propertyPath: m_Color.r

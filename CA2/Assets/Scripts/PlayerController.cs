@@ -53,31 +53,31 @@ public class PlayerController : MonoBehaviour
     // 2 touches to slide
     private void TouchInputHandler()
     {
-        Touch[] touches = Input.touches;
-        try
-        {
-            if (touches.Length != 0)
-            {
-
-                if(touches.Length == 1)
+        /*        Touch[] touches = Input.touches;
+                try
                 {
-                    if (touches[0].phase == TouchPhase.Began)
+                    if (touches.Length != 0)
                     {
-                        isJumping = true;
+
+                        if(touches.Length == 1)
+                        {
+                            if (touches[0].phase == TouchPhase.Began)
+                            {
+                                isJumping = true;
+                            }
+                        }
+
+
+                        if (touches.Length == 2)
+                        {
+                            if (touches[1].phase == TouchPhase.Stationary)
+                            {
+                                isSliding = true;
+                            }
+                        }
                     }
                 }
-
-
-                if (touches.Length == 2)
-                {
-                    if (touches[1].phase == TouchPhase.Stationary)
-                    {
-                        isSliding = true;
-                    }
-                }
-            }
-        }
-        catch { }
+                catch { }*/
     }
 
     private void MoveTowardsMiddle()
