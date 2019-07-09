@@ -605,8 +605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2cef2e693b0094d80d7c3696a26a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   mixer: {fileID: 24100000, guid: 25f931744642f9948bf1a873d48486fd, type: 2}
   slider: {fileID: 612035668}
+  pauseMenu: {fileID: 0}
+  deathMenu: {fileID: 0}
 --- !u!1 &669938439
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,8 +864,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -50}
-  m_SizeDelta: {x: 160, y: 160}
+  m_AnchoredPosition: {x: 75, y: -75}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953584236
 MonoBehaviour:
@@ -966,8 +969,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a2cef2e693b0094d80d7c3696a26a15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   mixer: {fileID: 0}
   slider: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  deathMenu: {fileID: 0}
 --- !u!1 &1012205350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,10 +1006,10 @@ RectTransform:
   m_Father: {fileID: 678321806}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 574, y: -268}
-  m_SizeDelta: {x: 1148, y: 536}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012205352
 MonoBehaviour:

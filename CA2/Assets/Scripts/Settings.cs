@@ -15,16 +15,17 @@ public class Settings : MonoBehaviour
     void Start()
     {
         slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        
     }
     void Update()
     {
-        if (!player)
-            Dead();
+      
     }
     private void OnBecameInvisible()
     {
-        Destroy(player);
+        Debug.Log("gone");
     }
+
     public void SetLevel(float sliderValue)
     {
         mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);//uses a log function to scale volume properly
