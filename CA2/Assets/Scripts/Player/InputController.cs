@@ -21,13 +21,12 @@ public class InputController : MonoBehaviour
             EnableTouchScreenInput();
         }
 
-        //Checks if device has a gyroscope and enables caches the gyroscope
-        gyro = Input.gyro;
-        if (gyro != null)
+        //Checks if device has a gyroscope and enables and caches the gyroscope
+        if (SystemInfo.supportsGyroscope)
         {
+            gyro = Input.gyro;
             hasGyro = true;
         }
-
     }
 
     private void Update()
