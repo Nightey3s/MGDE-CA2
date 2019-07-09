@@ -12,7 +12,7 @@ public class FlyingMovement : MonoBehaviour
     {
         if (!target)
         {
-            target = FindObjectOfType<PlayerController>().transform;
+            //target = FindObjectOfType<PlayerController>().transform;
         }
     }
 
