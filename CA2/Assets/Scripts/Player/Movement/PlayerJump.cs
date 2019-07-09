@@ -78,7 +78,8 @@ public class PlayerJump : MonoBehaviour
         {
             Vector3 targetPosition =
                 new Vector3(target.position.x, transform.position.y, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed);
+
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         }
     }
     
@@ -91,7 +92,8 @@ public class PlayerJump : MonoBehaviour
             transform.position + new Vector3(0, -1.0f, 0),
             transform.position + new Vector3(0, -1.3f, 0),
             ~(1<<gameObject.layer));
-        if (hitInfo /*&& (rigidBody.velocity.y > -3 && rigidBody.velocity.y < 3)*/)
+
+        if (hitInfo)
         {
             isGrounded = true;
         }

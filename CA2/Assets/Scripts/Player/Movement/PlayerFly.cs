@@ -34,10 +34,10 @@ public class PlayerFly : MonoBehaviour
         destination = transform.position;
 
         destination +=
-            new Vector3(deviceTilt.z, deviceTilt.x, transform.position.z);
+            new Vector3(deviceTilt.x, deviceTilt.y, 0);
 
         transform.position =
-            Vector3.Lerp(transform.position, destination, speed);
+            Vector3.Lerp(transform.position, destination, speed * Time.deltaTime);
     }
 
     // Disable device tilt on scipt disabled to save io function

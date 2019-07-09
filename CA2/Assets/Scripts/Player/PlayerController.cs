@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     {
         ICollectible collectible = collision.GetComponent<ICollectible>();
 
+        // pickes up collided ICollectible
         if (collectible != null && collectible is PowerUp)
         {
             collectible.PickUp(gameObject);
