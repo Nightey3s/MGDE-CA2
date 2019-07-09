@@ -27,8 +27,10 @@ public class SegmentDeleter : MonoBehaviour
         while (true)
         {
             if (CheckDelete(segment.GetComponent<SegmentController>()))
+            {
                 Destroy(segment);
-            yield return 0.5f;
+            }
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
