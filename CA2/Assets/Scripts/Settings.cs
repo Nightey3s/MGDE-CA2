@@ -7,12 +7,23 @@ using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
+    public GameObject player;
     public AudioMixer mixer;
     public Slider slider;
+    public GameObject pauseMenu, deathMenu;
 
     void Start()
     {
         slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+    }
+    void Update()
+    {
+        if (!player)
+            Dead();
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(player);
     }
     public void SetLevel(float sliderValue)
     {
@@ -21,6 +32,7 @@ public class Settings : MonoBehaviour
     }
     public void ExitGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);  //load the main menu
     }
     public void SettingMenu()
@@ -33,7 +45,26 @@ public class Settings : MonoBehaviour
     }
     public void StartGame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(3);  //load the game
     }
+
+    public void PauseGame()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+        
+    }
+    public void Dead()
+    {
+        deathMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+
 
 }
