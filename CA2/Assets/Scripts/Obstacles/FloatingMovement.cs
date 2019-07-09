@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingMovement : MonoBehaviour
+public class FloatingMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private Transform target;
     private Vector3 newPosition;
-
-    private void Start()
-    {
-        if (!target)
-        {
-            //target = FindObjectOfType<PlayerController>().transform;
-        }
-    }
 
     private void Update()
     {

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    private JumpMovement jumpMovement;
-    private FlyingMovement flyingMovement;
+    private PlayerJump playerJump;
+    private PlayerFly playerFly;
 
     public enum Mode { Jump, Fly }
     private Mode mode;
@@ -18,21 +18,10 @@ public class MovementController : MonoBehaviour
     // Sets up initial movement mode
     private void SetUpMovements()
     {
-        jumpMovement = GetComponent<JumpMovement>();
-        flyingMovement = GetComponent<FlyingMovement>();
-
-        if (!jumpMovement)
-        {
-            gameObject.AddComponent<JumpMovement>();
-        }
-
-        if (!flyingMovement)
-        {
-            gameObject.AddComponent<FlyingMovement>();
-        }
-
-        jumpMovement.enabled = true;
-        flyingMovement.enabled = false;
+        playerJump = GetComponent<PlayerJump>();
+        playerFly = GetComponent<PlayerFly>();
+        playerJump.enabled = true;
+        playerFly.enabled = false;
     }
 
     /// <summary>
@@ -56,15 +45,15 @@ public class MovementController : MonoBehaviour
     // Changes to jumping movement mode
     private void ChangeToJumpMode()
     {
-        jumpMovement.enabled = true;
-        flyingMovement.enabled = false;
+        playerJump.enabled = true;
+        playerFly.enabled = false;
     }
 
     // Changes to flying movement mode
     private IEnumerator ChangeToFlyMode(float time)
     {
-        jumpMovement.enabled = false;
-        flyingMovement.enabled = true;
+        playerJump.enabled = false;
+        playerFly.enabled = true;
 
         if (time >= 0)
         {

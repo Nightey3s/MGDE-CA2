@@ -14,13 +14,15 @@ public class JumpButton : MonoBehaviour
         }
     }
 
-    public void ButtonDownInputJump()
+    public void ButtonClickInputJump()
+    {
+        StartCoroutine(Jump());
+    }
+    
+    private IEnumerator Jump()
     {
         input.isJumping = true;
-    }
-
-    public void ButtonUpInputJump()
-    {
+        yield return new WaitForEndOfFrame();
         input.isJumping = false;
     }
 }

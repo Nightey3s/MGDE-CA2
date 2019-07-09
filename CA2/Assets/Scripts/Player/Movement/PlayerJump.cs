@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class JumpMovement : MonoBehaviour
+public class PlayerJump : MonoBehaviour
 {
     private Rigidbody2D rigidBody;
     private InputController input;
@@ -99,6 +99,6 @@ public class JumpMovement : MonoBehaviour
         {
             isGrounded = false;
         }
-        yield return null;
+        yield return new WaitForSeconds(2.0f);
     }
 }
