@@ -4,24 +4,51 @@ using UnityEngine;
 
 public class DeathTrigger : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
+    [SerializeField] private Transform player, boundTopLeft, boundBottomRight;
     [SerializeField] DeathScreen screen;
 
-    private void Start()
+    // Checks if dead
+    private void Update()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        if (CheckDead())
+        {
+            KillPlayer();
+            this.enabled = false;
+        }
     }
 
-    // if collides with a player, disables the player gameobject and shows the
-    // the death screen. Passes in the player's time alive to display as score
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Disables player gameobject
+    private void KillPlayer()
     {
-        if (collision.collider.GetComponent<PlayerController>())
-        {
-            collision.collider.gameObject.SetActive(false);
-            screen.Show();
 
-            screen.SetScore((int)Time.realtimeSinceStartup);
+        player.gameObject.SetActive(false);
+        screen.Show();
+        screen.SetScore((int)Time.realtimeSinceStartup);
+    }
+
+    // Checks if player falls out of camera
+    private bool CheckDead()
+    {
+        if (player.position.y > boundTopLeft.position.y)
+        {
+            return true;
         }
+
+        if (player.position.x < boundTopLeft.position.x)
+        {
+            return true;
+        }
+
+        if (player.position.y < boundBottomRight.position.y)
+        {
+            return true;
+        }
+
+        if (player.position.x > boundBottomRight.position.x)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
