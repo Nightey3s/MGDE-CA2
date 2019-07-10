@@ -22,10 +22,6 @@ public class PlayerJump : MonoBehaviour
         isSliding = false;
         rigidBody = GetComponent<Rigidbody2D>();
         input = GetComponent<InputController>();
-        if (!target)
-        {
-            target = Camera.main.transform;
-        }
     }
 
     // Update is called once per frame

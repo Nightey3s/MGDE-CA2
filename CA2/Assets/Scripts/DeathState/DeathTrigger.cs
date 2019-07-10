@@ -23,7 +23,8 @@ public class DeathTrigger : MonoBehaviour
 
         player.gameObject.SetActive(false);
         screen.Show();
-        screen.SetScore((int)Time.realtimeSinceStartup);
+        screen.SetScore((int)Time.timeSinceLevelLoad);
+        Handheld.Vibrate(); //vibrate
     }
 
     // Checks if player falls out of camera

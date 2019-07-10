@@ -14,16 +14,20 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        try
+        {
+            slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+        }
+        catch { }
         
     }
-    void Update()
+
+    private void Update()
     {
-      
-    }
-    private void OnBecameInvisible()
-    {
-        Debug.Log("gone");
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     public void SetLevel(float sliderValue)
@@ -44,10 +48,16 @@ public class Settings : MonoBehaviour
     {
         SceneManager.LoadScene(2);  //load the help menu
     }
+
+    public void CreditsMenu()
+    {
+        SceneManager.LoadScene(3); // load the credits menu
+    }
+
     public void StartGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(3);  //load the game
+        SceneManager.LoadScene(4);  //load the game
     }
 
     public void PauseGame()

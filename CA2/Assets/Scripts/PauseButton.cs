@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseButton : MonoBehaviour
 {
@@ -18,5 +19,10 @@ public class PauseButton : MonoBehaviour
             Time.timeScale = 1;
             pauseScreen.SetActive(false);
         }
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

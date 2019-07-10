@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class JumpButton : MonoBehaviour
@@ -16,13 +15,16 @@ public class JumpButton : MonoBehaviour
 
     public void ButtonClickInputJump()
     {
-        StartCoroutine(Jump());
-    }
-    
-    private IEnumerator Jump()
-    {
         input.isJumping = true;
+        StartCoroutine(ResetJump());
+    }
+
+    // Waits for end of 2 frame before setting input.isJumping to false
+    private IEnumerator ResetJump()
+    {
+        yield return new WaitForEndOfFrame();
         yield return new WaitForEndOfFrame();
         input.isJumping = false;
+        yield return null;
     }
 }

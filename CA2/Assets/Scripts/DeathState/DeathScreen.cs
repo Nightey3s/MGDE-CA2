@@ -14,7 +14,7 @@ public class DeathScreen : MonoBehaviour
 
     public void ReturnButtonClicked()
     {
-        // SceneManager.LoadScene(/** Title scene**/);
+         SceneManager.LoadScene(0);
     }
 
     /// <summary>
