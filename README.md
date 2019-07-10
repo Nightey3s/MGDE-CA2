@@ -4,7 +4,7 @@ The Memery done by Git Gud
 
 Member 1: 
 Jeremy Lim
-(Admin Number)
+P1829387
 Team Carry
 Basically did everything else
 
